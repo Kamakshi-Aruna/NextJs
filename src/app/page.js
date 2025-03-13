@@ -2,6 +2,7 @@ import NoCacheComponent from "./components/NoCacheComponent";
 import WithCacheComponent from "./components/WithCacheComponent";
 import Counter from "@/app/components/Counter";
 import ClientComponent from "@/app/components/ClientComponent";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -14,7 +15,21 @@ export default function Home() {
             <Counter/><br/>
 
             <h1>Next.js 15 - use server Example</h1>
-            <ClientComponent/>
+            <ClientComponent/><br/>
+
+            <h1>Next.js 15 - Optimized Image</h1>
+            <Image
+                src="/images/nature.webp"
+                width={300}
+                height={150}
+                alt="Nature Logo"
+                priority // Loads image faster
+                style={{
+                    display: 'block',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                }}
+            />
         </div>
     );
 }
